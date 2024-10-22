@@ -3,6 +3,7 @@ package fr.efrei.pokemon.controllers;
 import fr.efrei.pokemon.models.Combat;
 import fr.efrei.pokemon.services.CombatService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -23,13 +24,31 @@ public class CombatController {
     @GetMapping
     public ResponseEntity<List<Combat>> findAll() {
         List<Combat> combats = combatService.findAll();
-        return ResponseEntity.ok(combats);
+        return new ResponseEntity<>(combats, HttpStatus.OK);
     }
 
     // Créer un combat
     @PostMapping
     public ResponseEntity<?> create(@RequestBody Combat combat) {
         combatService.save(combat);
-        return ResponseEntity.ok().build();
+        return new ResponseEntity<>(HttpStatus.CREATED);
     }
+
+    // Supprimer un combat
+    @DeleteMapping("/{id}")
+    public ResponseEntity<?> deleteById(@PathVariable String id) {
+        combatService.deleteById(id);
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+    }
+
+    // Trouver un combat
+    @GetMapping("/{id}")
+    public ResponseEntity<Combat> findById(@PathVariable String id) {
+        Combat combat = combatService.findById(id);
+        if (combat == null) {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
+
 }

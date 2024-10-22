@@ -14,6 +14,8 @@ public class Pokemon {
 
     private int level;
 
+    //private int hp;
+
     @Enumerated(EnumType.STRING)
     private Type type; // SI mon pokemon est type feu -> Type == "FEU"
 

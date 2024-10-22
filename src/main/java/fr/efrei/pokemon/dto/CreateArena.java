@@ -1,28 +1,14 @@
-package fr.efrei.pokemon.models;
+package fr.efrei.pokemon.dto;
 
-import jakarta.persistence.*;
-
-@Entity
-public class Arena {
-    @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
-    private String id;
+public class CreateArena {
 
     private String name;
+
     private String lieu;
+
     private int niveauMin;
 
-    @ManyToOne
-    @JoinColumn(name = "trainer_id")
-    private Trainer trainerPrincipal;
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
+    private String trainerPrincipal;
 
     public String getName() {
         return name;
@@ -48,11 +34,11 @@ public class Arena {
         this.niveauMin = niveauMin;
     }
 
-    public Trainer getTrainerPrincipal() {
+    public String getTrainerPrincipal() {
         return trainerPrincipal;
     }
 
-    public void setTrainerPrincipal(Trainer trainerPrincipal) {
+    public void setTrainerPrincipal(String trainerPrincipal) {
         this.trainerPrincipal = trainerPrincipal;
     }
 }

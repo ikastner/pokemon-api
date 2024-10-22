@@ -5,8 +5,8 @@ import jakarta.persistence.*;
 @Entity
 public class Combat {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    @GeneratedValue(strategy = GenerationType.UUID)
+    private String id;
 
     @ManyToOne
     @JoinColumn(name = "pokemon1_id")
@@ -20,13 +20,12 @@ public class Combat {
     @JoinColumn(name = "arena_id")
     private Arena arena;
 
-    private Long vainqueur_id;
 
-    public Long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -54,11 +53,7 @@ public class Combat {
         this.arena = arena;
     }
 
-    public Long getVainqueur_id() {
-        return vainqueur_id;
-    }
 
-    public void setVainqueur_id(Long vainqueur_id) {
-        this.vainqueur_id = vainqueur_id;
-    }
+
+
 }
