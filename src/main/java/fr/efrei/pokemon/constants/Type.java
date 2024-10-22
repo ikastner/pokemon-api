@@ -1,10 +1,12 @@
 package fr.efrei.pokemon.constants;
 
 public enum Type {
-    PSY,
-    ELECTRIQUE,
-    FEU,
     EAU,
+    FEU,
     PLANTE,
+    ELECTRIQUE,
+    TERRE,
+    VOL,
+    PSY,
     INSECTE
 }
