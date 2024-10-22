@@ -51,4 +51,13 @@ public class CombatController {
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
+    @PatchMapping("/{id}")
+    public ResponseEntity<?> update(@PathVariable String id, @RequestBody Combat combat) {
+        combatService.update(id, combat);
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+    }
+
+
+
+
 }

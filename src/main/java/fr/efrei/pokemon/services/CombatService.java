@@ -42,5 +42,22 @@ public class CombatService {
         save(combatToUpdate);
     }
 
+    @Transactional
+    public void partialUpdate(String id, Combat combat) {
+        Combat combatToUpdate = findById(id);
+        if(combat.getPokemon1() != null) {
+            combatToUpdate.setPokemon1(combat.getPokemon1());
+        }
+        if(combat.getPokemon2() != null) {
+            combatToUpdate.setPokemon2(combat.getPokemon2());
+        }
+        if(combat.getArena() != null) {
+            combatToUpdate.setArena(combat.getArena());
+        }
+        save(combatToUpdate);
+    }
+
+
+
 
 }
