@@ -3,7 +3,7 @@ package fr.efrei.pokemon.models;
 import jakarta.persistence.*;
 
 @Entity
-public class Arene {
+public class Arena {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

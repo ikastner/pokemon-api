@@ -17,6 +17,18 @@ public class Pokemon {
     @Enumerated(EnumType.STRING)
     private Type type; // SI mon pokemon est type feu -> Type == "FEU"
 
+//    @ManyToOne
+//    @JoinColumn(name = "trainer_id")
+//    private Trainer trainer;
+
+//    public Trainer getTrainer() {
+//        return trainer;
+//    }
+//
+//    public void setTrainer(Trainer trainer) {
+//        this.trainer = trainer;
+//    }
+
     public String getName() {
         return name;
     }

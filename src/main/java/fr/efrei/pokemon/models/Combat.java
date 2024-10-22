@@ -17,8 +17,8 @@ public class Combat {
     private Pokemon pokemon2;
 
     @ManyToOne
-    @JoinColumn(name = "arene_id")
-    private Arene arene;
+    @JoinColumn(name = "arena_id")
+    private Arena arena;
 
     private Long vainqueur_id;
 
@@ -46,12 +46,12 @@ public class Combat {
         this.pokemon2 = pokemon2;
     }
 
-    public Arene getArene() {
-        return arene;
+    public Arena getArena() {
+        return arena;
     }
 
-    public void setArene(Arene arene) {
-        this.arene = arene;
+    public void setArena(Arena arena) {
+        this.arena = arena;
     }
 
     public Long getVainqueur_id() {
